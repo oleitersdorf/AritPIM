@@ -1,0 +1,9 @@
+Function/N,bfloat 16,IEEE 16,IEEE 32,IEEE 64
+Serial Add (unsigned),1075,1117,2306,4915
+Serial Add (signed),1849,1978,3997,8536
+Serial Multiply,1742,2780,11586,46204
+Serial Divide,3749,5639,19909,83255
+Parallel Add (unsigned),674,688,817,998
+Parallel Add (signed),1132,1121,1359,1673
+Parallel Multiply,721,841,1407,2625
+Parallel Divide,1749,2092,3963,8252

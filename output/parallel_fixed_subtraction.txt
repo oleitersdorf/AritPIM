@@ -1,0 +1,107 @@
+Parallel Fixed Subtraction: 32-bit with 98 cycles, 1424 gates, and 288 cells total.
+Supports both unsigned and signed numbers.
+
+Inputs:
+	 x (32-bit): bit 0 of partitions 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 
+	 y (32-bit): bit 1 of partitions 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 
+Outputs:
+	 z (32-bit): bit 2 of partitions 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 
+
+T0:  	p_j.3  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T1:  	p_j.3  = NOT(p_i.1)               for i in range(0, 32, 1)       and j = i + 0
+T2:  	p_j.5  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T3:  	p_j.5  = NOR(p_i.0, p_i.3)        for i in range(0, 32, 1)       and j = i + 0
+T4:  	p_j.4  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T5:  	p_j.4  = NOT(p_i.5)               for i in range(0, 32, 1)       and j = i + 0
+T6:  	p_j.6  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T7:  	p_j.6  = NOT(p_i.0)               for i in range(0, 32, 1)       and j = i + 0
+T8:  	p_j.7  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T9:  	p_j.7  = NOT(p_i.3)               for i in range(0, 32, 1)       and j = i + 0
+T10: 	p_j.8  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T11: 	p_j.8  = NOR(p_i.6, p_i.7)        for i in range(0, 32, 1)       and j = i + 0
+T12: 	p_j.6  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T13: 	p_j.6  = NOT(p_i.8)               for i in range(0, 32, 1)       and j = i + 0
+T14: 	p_j.6  = NOT(p_i.4)               for i in range(0, 1, 1)        and j = i + 0
+T15: 	p_j.4  = NOT(p_i.6)               for i in range(1, 30, 2)       and j = i + 1
+T16: 	p_j.6  = NOT(p_i.4)               for i in range(2, 31, 2)       and j = i + 0
+T17: 	p_j.4  = INIT1                    for i in range(2, 31, 2)       and j = i + 0
+T18: 	p_j.4  = NOT(p_i.5)               for i in range(2, 31, 2)       and j = i + 0
+T19: 	p_j.4  = NOT(p_i.5)               for i in range(1, 30, 2)       and j = i + 1
+T20: 	p_j.5  = INIT1                    for i in range(2, 31, 2)       and j = i + 0
+T21: 	p_j.5  = NOT(p_i.4)               for i in range(2, 31, 2)       and j = i + 0
+T22: 	p_j.4  = NOT(p_i.6)               for i in range(2, 27, 4)       and j = i + 2
+T23: 	p_j.6  = NOT(p_i.4)               for i in range(4, 29, 4)       and j = i + 0
+T24: 	p_j.4  = INIT1                    for i in range(4, 29, 4)       and j = i + 0
+T25: 	p_j.4  = NOT(p_i.5)               for i in range(4, 29, 4)       and j = i + 0
+T26: 	p_j.4  = NOT(p_i.5)               for i in range(2, 27, 4)       and j = i + 2
+T27: 	p_j.5  = INIT1                    for i in range(4, 29, 4)       and j = i + 0
+T28: 	p_j.5  = NOT(p_i.4)               for i in range(4, 29, 4)       and j = i + 0
+T29: 	p_j.4  = NOT(p_i.6)               for i in range(4, 21, 8)       and j = i + 4
+T30: 	p_j.6  = NOT(p_i.4)               for i in range(8, 25, 8)       and j = i + 0
+T31: 	p_j.4  = INIT1                    for i in range(8, 25, 8)       and j = i + 0
+T32: 	p_j.4  = NOT(p_i.5)               for i in range(8, 25, 8)       and j = i + 0
+T33: 	p_j.4  = NOT(p_i.5)               for i in range(4, 21, 8)       and j = i + 4
+T34: 	p_j.5  = INIT1                    for i in range(8, 25, 8)       and j = i + 0
+T35: 	p_j.5  = NOT(p_i.4)               for i in range(8, 25, 8)       and j = i + 0
+T36: 	p_j.4  = NOT(p_i.6)               for i in range(8, 9, 1)        and j = i + 8
+T37: 	p_j.6  = NOT(p_i.4)               for i in range(16, 17, 1)      and j = i + 0
+T38: 	p_j.4  = INIT1                    for i in range(16, 17, 1)      and j = i + 0
+T39: 	p_j.4  = NOT(p_i.5)               for i in range(16, 17, 1)      and j = i + 0
+T40: 	p_j.4  = NOT(p_i.5)               for i in range(8, 9, 1)        and j = i + 8
+T41: 	p_j.5  = INIT1                    for i in range(16, 17, 1)      and j = i + 0
+T42: 	p_j.5  = NOT(p_i.4)               for i in range(16, 17, 1)      and j = i + 0
+T43: 	p_j.4  = NOT(p_i.6)               for i in range(0, 1, 1)        and j = i + 16
+T44: 	p_j.6  = NOT(p_i.4)               for i in range(16, 17, 1)      and j = i + 0
+T45: 	p_j.4  = INIT1                    for i in range(16, 17, 1)      and j = i + 0
+T46: 	p_j.4  = NOT(p_i.5)               for i in range(16, 17, 1)      and j = i + 0
+T47: 	p_j.4  = NOT(p_i.5)               for i in range(0, 1, 1)        and j = i + 16
+T48: 	p_j.5  = INIT1                    for i in range(16, 17, 1)      and j = i + 0
+T49: 	p_j.5  = NOT(p_i.4)               for i in range(16, 17, 1)      and j = i + 0
+T50: 	p_j.4  = NOT(p_i.6)               for i in range(0, 17, 16)      and j = i + 8
+T51: 	p_j.6  = NOT(p_i.4)               for i in range(8, 25, 16)      and j = i + 0
+T52: 	p_j.4  = INIT1                    for i in range(8, 25, 16)      and j = i + 0
+T53: 	p_j.4  = NOT(p_i.5)               for i in range(8, 25, 16)      and j = i + 0
+T54: 	p_j.4  = NOT(p_i.5)               for i in range(0, 17, 16)      and j = i + 8
+T55: 	p_j.5  = INIT1                    for i in range(8, 25, 16)      and j = i + 0
+T56: 	p_j.5  = NOT(p_i.4)               for i in range(8, 25, 16)      and j = i + 0
+T57: 	p_j.4  = NOT(p_i.6)               for i in range(0, 25, 8)       and j = i + 4
+T58: 	p_j.6  = NOT(p_i.4)               for i in range(4, 29, 8)       and j = i + 0
+T59: 	p_j.4  = INIT1                    for i in range(4, 29, 8)       and j = i + 0
+T60: 	p_j.4  = NOT(p_i.5)               for i in range(4, 29, 8)       and j = i + 0
+T61: 	p_j.4  = NOT(p_i.5)               for i in range(0, 25, 8)       and j = i + 4
+T62: 	p_j.5  = INIT1                    for i in range(4, 29, 8)       and j = i + 0
+T63: 	p_j.5  = NOT(p_i.4)               for i in range(4, 29, 8)       and j = i + 0
+T64: 	p_j.4  = NOT(p_i.6)               for i in range(0, 29, 4)       and j = i + 2
+T65: 	p_j.6  = NOT(p_i.4)               for i in range(2, 31, 4)       and j = i + 0
+T66: 	p_j.4  = INIT1                    for i in range(2, 31, 4)       and j = i + 0
+T67: 	p_j.4  = NOT(p_i.5)               for i in range(2, 31, 4)       and j = i + 0
+T68: 	p_j.4  = NOT(p_i.5)               for i in range(0, 29, 4)       and j = i + 2
+T69: 	p_j.5  = INIT1                    for i in range(2, 31, 4)       and j = i + 0
+T70: 	p_j.5  = NOT(p_i.4)               for i in range(2, 31, 4)       and j = i + 0
+T71: 	p_j.4  = NOT(p_i.6)               for i in range(0, 31, 2)       and j = i + 1
+T72: 	p_j.6  = NOT(p_i.4)               for i in range(1, 32, 2)       and j = i + 0
+T73: 	p_j.4  = INIT1                    for i in range(1, 32, 2)       and j = i + 0
+T74: 	p_j.4  = NOT(p_i.5)               for i in range(1, 32, 2)       and j = i + 0
+T75: 	p_j.4  = NOT(p_i.5)               for i in range(0, 31, 2)       and j = i + 1
+T76: 	p_j.5  = INIT1                    for i in range(1, 32, 2)       and j = i + 0
+T77: 	p_j.5  = NOT(p_i.4)               for i in range(1, 32, 2)       and j = i + 0
+T78: 	p_j.4  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T79: 	p_j.4  = INIT1                    for i in range(0, 1, 1)        and j = i + 0
+T80: 	p_j.4  = NOT(p_i.6)               for i in range(0, 31, 2)       and j = i + 1
+T81: 	p_j.4  = NOT(p_i.6)               for i in range(1, 30, 2)       and j = i + 1
+T82: 	p_j.5  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T83: 	p_j.5  = NOR(p_i.0, p_i.3)        for i in range(0, 32, 1)       and j = i + 0
+T84: 	p_j.6  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T85: 	p_j.6  = NOR(p_i.5, p_i.0)        for i in range(0, 32, 1)       and j = i + 0
+T86: 	p_j.7  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T87: 	p_j.7  = NOR(p_i.5, p_i.3)        for i in range(0, 32, 1)       and j = i + 0
+T88: 	p_j.2  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T89: 	p_j.2  = NOR(p_i.6, p_i.7)        for i in range(0, 32, 1)       and j = i + 0
+T90: 	p_j.5  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T91: 	p_j.5  = NOR(p_i.2, p_i.4)        for i in range(0, 32, 1)       and j = i + 0
+T92: 	p_j.6  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T93: 	p_j.6  = NOR(p_i.5, p_i.2)        for i in range(0, 32, 1)       and j = i + 0
+T94: 	p_j.7  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T95: 	p_j.7  = NOR(p_i.5, p_i.4)        for i in range(0, 32, 1)       and j = i + 0
+T96: 	p_j.2  = INIT1                    for i in range(0, 32, 1)       and j = i + 0
+T97: 	p_j.2  = NOR(p_i.6, p_i.7)        for i in range(0, 32, 1)       and j = i + 0

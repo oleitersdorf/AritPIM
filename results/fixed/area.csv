@@ -1,0 +1,9 @@
+Function/N,8,16,32,64
+Serial Add,29,53,101,197
+Serial Subtract,30,54,102,198
+Serial Multiply,47,87,187,385
+Serial Divide,50,90,170,330
+Parallel Add,64,128,256,512
+Parallel Subtract,72,144,288,576
+Parallel Multiply,88,176,352,704
+Parallel Divide,112,224,448,896
