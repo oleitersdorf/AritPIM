@@ -102,7 +102,7 @@ def decomposeUnsignedFloat(x):
     """
     x = x.astype(np.float32)
     significand, exponent = np.frexp(np.abs(x))
-    return exponent + 127 - 1, (significand * (2 ** 24)).astype(int)
+    return np.where(significand == 0, 0, exponent + 127 - 1), (significand * (2 ** 24)).astype(int)
 
 
 def unsignedFloatToBinary(x):
