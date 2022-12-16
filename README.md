@@ -88,24 +88,24 @@ parameters from the RACER [2] architecture. To evaluate the GPU performance, we 
 such vectors in the GPU memory and perform the vectored operations, while also measuring performance; the code is available in the
 `gpu` folder. Overall, we find:
 
-| Approach | Function | AritPIM TOPS | AritPIM TOPS/W | GPU TOPS | GPU TOPS/W | TOPS Improvement | TOPS/W Improvement |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |  
-| Bit-Serial | Fixed Add | 34.89 | 0.271 | 0.034 | 0.00023 | 1026x | 1187x |
-| | Fixed Subtract | 31.41 | 0.244 | 0.034 | 0.00023 | 924x | 1061x |
-| | Fixed Multiply | 1.11 | 0.009 | 0.034 | 0.00023 | 33x | 38x |
-| | Fixed Divide | 0.71 | 0.005 | 0.034 | 0.00021 | 21x | 26x |
-| | Floating Add (unsigned) | 8.73 | 0.068 | 0.034 | 0.00023 | 257x | 299x | 
-| | Floating Add (signed) | 5.04 | 0.039 | 0.034 | 0.00023 | 148x | 174x |
-| | Floating Multiply | 1.74 | 0.013 | 0.034 | 0.00023 | 51x | 59x |
-| | Floating Divide | 1.01 | 0.008 | 0.034 | 0.00017 | 30x | 46x |
-| Bit-Parallel | Fixed Add | 211.92 | 0.115 | 0.034 | 0.00023 | 6234x | 504x |
-| | Fixed Subtract | 205.44 | 0.110 | 0.034 | 0.00023 | 6043x | 478x | 
-| | Fixed Multiply | 16.09 | 0.006 | 0.034 | 0.00023 | 473x | 28x |
-| | Fixed Divide | 4.69 | 0.003 | 0.034 | 0.00021 | 138x | 12x |
-| | Floating Add (unsigned) | 24.64 | 0.027 | 0.034 | 0.00023 | 724x | 118x | 
-| | Floating Add (signed) | 14.81 | 0.015 | 0.034 | 0.00023 | 436x | 68x |
-| | Floating Multiply | 14.31 | 0.009 | 0.034 | 0.00023 | 421x | 41x |
-| | Floating Divide | 5.08 | 0.004 | 0.034 | 0.00017 | 150x | 21x |
+| Approach | Function | AritPIM TOPS | AritPIM TOPS/W | GPU Latency (sec) | GPU Power (W) | GPU TOPS | GPU TOPS/W | TOPS Improvement | TOPS/W Improvement |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |  
+| Bit-Serial | Fixed Add | 34.89 | 0.271 | 0.001974 | 149 | 0.034 | 0.00023 | 1026x | 1187x |
+| | Fixed Subtract | 31.41 | 0.244 | 0.001974 | 148 | 0.034 | 0.00023 | 924x | 1061x |
+| | Fixed Multiply | 1.11 | 0.009 | 0.001974 | 151 | 0.034 | 0.00023 | 33x | 38x |
+| | Fixed Divide | 0.71 | 0.005 | 0.001975 | 159 | 0.034 | 0.00021 | 21x | 26x |
+| | Floating Add (unsigned) | 8.73 | 0.068 | 0.001973 | 150 | 0.034 | 0.00023 | 257x | 299x | 
+| | Floating Add (signed) | 5.04 | 0.039 | 0.001973 | 151 | 0.034 | 0.00023 | 148x | 174x |
+| | Floating Multiply | 1.74 | 0.013 | 0.001973 | 149 | 0.034 | 0.00023 | 51x | 59x |
+| | Floating Divide | 1.01 | 0.008 | 0.001978 | 201 | 0.034 | 0.00017 | 30x | 46x |
+| Bit-Parallel | Fixed Add | 211.92 | 0.115 | 0.001974 | 149 | 0.034 | 0.00023 | 6234x | 504x |
+| | Fixed Subtract | 205.44 | 0.110 | 0.001974 | 148 | 0.034 | 0.00023 | 6043x | 478x | 
+| | Fixed Multiply | 16.09 | 0.006 | 0.001974 | 151 | 0.034 | 0.00023 | 473x | 28x |
+| | Fixed Divide | 4.69 | 0.003 | 0.001975 | 159 | 0.034 | 0.00021 | 138x | 12x |
+| | Floating Add (unsigned) | 24.64 | 0.027 | 0.001973 | 150 | 0.034 | 0.00023 | 724x | 118x | 
+| | Floating Add (signed) | 14.81 | 0.015 | 0.001973 | 151 | 0.034 | 0.00023 | 436x | 68x |
+| | Floating Multiply | 14.31 | 0.009 | 0.001973 | 149 | 0.034 | 0.00023 | 421x | 41x |
+| | Floating Divide | 5.08 | 0.004 | 0.001978 | 201 | 0.034 | 0.00017 | 150x | 21x |
 
 ### Adoption
 
