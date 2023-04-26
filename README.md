@@ -2,7 +2,7 @@
 ## Overview
 This is the simulation environment for the following paper, 
 
-`O. Leitersdorf, D. Leitersdorf, J. Gal, M. Dahan, R. Ronen, and S. Kvatinsky, “AritPIM: High-Throughput In-Memory Arithmetic,” 2022.` 
+`O. Leitersdorf, D. Leitersdorf, J. Gal, M. Dahan, R. Ronen, and S. Kvatinsky, “AritPIM: High-Throughput In-Memory Arithmetic,” IEEE Transactions on Emerging Topics in Computing, 2023.` 
 
 The goal of the simulator is to verify the correctness of the algorithms proposed in the paper,
 to mesaure the performance of the algorithms (latency, area, energy), and to serve as an open-source library that 
